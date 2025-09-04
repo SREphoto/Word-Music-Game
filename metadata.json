@@ -1,0 +1,6 @@
+{
+  "name": "Word Music Game",
+  "description": "Guess words to compose real-time music with sliders to control component influence.",
+  "requestFramePermissions": [],
+  "prompt": "Users guess words. Each correct word adds a musical component to a real-time generated song. Sliders allow users to adjust the weight/influence of each musical component (guessed word)."
+}

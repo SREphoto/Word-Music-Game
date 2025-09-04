@@ -1,0 +1,6 @@
+/*
+  All component-specific styles are now within their respective LitElement definitions in index.tsx.
+  Global styles (like body background, font, dragging cursor) are inlined in index.html <style> tag
+  to ensure they are applied early and correctly.
+  This file is kept for potential future global CSS needs but is currently empty.
+*/
