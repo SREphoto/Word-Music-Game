@@ -9,6 +9,11 @@ export default defineConfig(({ mode }) => {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
     },
+    server: {
+      port: 3035,
+      host: true,
+      open: true
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

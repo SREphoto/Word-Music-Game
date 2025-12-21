@@ -22,11 +22,19 @@ import { ToastMessage } from './components/ToastMessage';
 import { SettingsController } from './components/SettingsController';
 
 // Corrected API Key usage as per guidelines
+const getApiKey = () => {
+    if (typeof process !== 'undefined' && process.env && process.env.API_KEY) return process.env.API_KEY;
+    if (typeof process !== 'undefined' && process.env && process.env.VITE_GEMINI_API_KEY) return process.env.VITE_GEMINI_API_KEY;
+    // @ts-ignore
+    if (import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) return import.meta.env.VITE_GEMINI_API_KEY;
+    return '';
+};
+
 const ai = new GoogleGenAI({
-    apiKey: process.env.API_KEY, // Corrected from GEMINI_API_KEY
-    apiVersion: 'v1alpha', // Assuming this is specific to Lyria API
+    apiKey: getApiKey(),
+    apiVersion: 'v1alpha',
 });
-let model = 'lyria-realtime-exp'; // Lyria specific model
+let model = 'lyria-realtime-exp';
 
 /** Main component for the Word Music Game. */
 @customElement('word-music-game')
